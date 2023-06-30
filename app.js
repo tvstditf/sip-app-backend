@@ -64,6 +64,8 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   }
 });
 
+console.log("TEST");
+
 //Route Handlers
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
