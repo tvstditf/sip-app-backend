@@ -13,7 +13,7 @@ const {
 } = require("../utils/verifyToken");
 const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(config.SEND_GRID_API_KEY);
+// sgMail.setApiKey(config.SEND_GRID_API_KEY);
 
 //RefreshTokens Array
 // let refreshTokensArray = [];
@@ -58,21 +58,21 @@ router.post("/register", async (req, res) => {
     res.status(200).json(user);
 
     // Send Email to User
-    const msg = {
-      to: req.body.email,
-      from: "tvstditfstorage@gmail.com",
-      subject: "Special Intervention Programme Archive Registration",
-      text: "Welcome to TVSTD Special Intervention Programme Archive Databank",
-    };
+    //   const msg = {
+    //     to: req.body.email,
+    //     from: "tvstditfstorage@gmail.com",
+    //     subject: "Special Intervention Programme Archive Registration",
+    //     text: "Welcome to TVSTD Special Intervention Programme Archive Databank",
+    //   };
 
-    sgMail
-      .send(msg)
-      .then(() => {
-        console.log("Email Sent");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    //   sgMail
+    //     .send(msg)
+    //     .then(() => {
+    //       console.log("Email Sent");
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
   } catch (error) {
     res.status(500).json(error);
   }
