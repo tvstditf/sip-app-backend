@@ -64,7 +64,17 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
   }
 });
 
-console.log("TEST");
+app.get("/", (req, res) => {
+  //Home route
+  const appinfo = {
+    "Application Name": "TVSTD Databank Server API",
+    "Application Owner": "TVST Department, Industrial Training Fund",
+    "Application Version": "1.0.0",
+    "Application Engineer": "Ebhota Jonathan",
+  };
+
+  return res.json(appinfo);
+});
 
 //Route Handlers
 app.use("/api/auth", authRoute);
